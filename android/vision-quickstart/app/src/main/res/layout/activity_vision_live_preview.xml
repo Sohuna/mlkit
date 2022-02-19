@@ -38,6 +38,12 @@
       android:background="#000"
       android:orientation="horizontal">
 
+    <Button
+        android:id="@+id/zoom_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="1x" />
+
     <ToggleButton
         android:id="@+id/facing_switch"
         android:layout_width="48dp"
