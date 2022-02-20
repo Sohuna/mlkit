@@ -124,11 +124,11 @@ public final class LivePreviewActivity extends AppCompatActivity
 
         Spinner spinner = findViewById(R.id.spinner);
         List<String> options = new ArrayList<>();
+        options.add(BARCODE_SCANNING);
         options.add(OBJECT_DETECTION);
         options.add(OBJECT_DETECTION_CUSTOM);
         options.add(CUSTOM_AUTOML_OBJECT_DETECTION);
         options.add(FACE_DETECTION);
-        options.add(BARCODE_SCANNING);
         options.add(IMAGE_LABELING);
         options.add(IMAGE_LABELING_CUSTOM);
         options.add(CUSTOM_AUTOML_LABELING);
