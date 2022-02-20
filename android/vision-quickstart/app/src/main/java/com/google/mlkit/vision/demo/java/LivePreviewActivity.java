@@ -153,6 +153,9 @@ public final class LivePreviewActivity extends AppCompatActivity
 
         zoom_button = findViewById((R.id.zoom_button));
         zoom_button.setOnClickListener(this);
+        zoomNum = PreferenceUtils.getZoomRate(this);
+        if(zoomNum!=0)
+            zoom_button.setText("/"+zoomNum);
 
         ImageView settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(
@@ -354,6 +357,9 @@ public final class LivePreviewActivity extends AppCompatActivity
                     Log.d(TAG, "resume: graphOverlay is null");
                 }
                 preview.start(cameraSource, graphicOverlay);
+
+                // set zoom rate
+                cameraSource.changeZoomRate(zoomNum);
             } catch (IOException e) {
                 Log.e(TAG, "Unable to start camera source.", e);
                 cameraSource.release();
@@ -465,6 +471,7 @@ public final class LivePreviewActivity extends AppCompatActivity
 
         if (cameraSource != null) {
             cameraSource.changeZoomRate(zoomNum);
+            PreferenceUtils.setZoomRate(this, zoomNum);
         }
     }
 }

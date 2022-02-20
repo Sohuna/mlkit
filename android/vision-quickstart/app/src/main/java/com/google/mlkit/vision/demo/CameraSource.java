@@ -726,6 +726,9 @@ public class CameraSource {
     }
 
     public void changeZoomRate(int requestNum) {
+        if(camera==null)
+            return;
+
         Camera.Parameters parameters=camera.getParameters();
         Log.d(TAG, "ZoomSupported:" + parameters.isZoomSupported());
         List<Integer> zoomRatios = parameters.getZoomRatios();
